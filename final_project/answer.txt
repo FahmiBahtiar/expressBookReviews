@@ -1,0 +1,147 @@
+﻿
+Express Book Review - Assignment Answers
+Generated at 02/12/2026 02:29:33
+
+Task 1: GitHub Repo
+COMMAND:
+N/A
+OUTPUT:
+https://github.com/FahmiBahtiar/expressBookReviews
+
+
+================================================================
+Task 2: Get all books
+COMMAND:
+curl -s http://localhost:5000/
+
+OUTPUT:
+{
+    "1": {
+        "author": "Chinua Achebe",
+        "title": "Things Fall Apart",
+        "reviews": {}
+    },
+    "2": {
+        "author": "Hans Christian Andersen",
+        "title": "Fairy tales",
+        "reviews": {}
+    },
+    "3": {
+        "author": "Dante Alighieri",
+        "title": "The Divine Comedy",
+        "reviews": {}
+    },
+    "4": {
+        "author": "Unknown",
+        "title": "The Epic Of Gilgamesh",
+        "reviews": {}
+    },
+    "5": {
+        "author": "Unknown",
+        "title": "The Book Of Job",
+        "reviews": {}
+    },
+    "6": {
+        "author": "Unknown",
+        "title": "One Thousand and One Nights",
+        "reviews": {}
+    },
+    "7": {
+        "author": "Unknown",
+        "title": "Nj├íl's Saga",
+        "reviews": {}
+    },
+    "8": {
+        "author": "Jane Austen",
+        "title": "Pride and Prejudice",
+        "reviews": {}
+    },
+    "9": {
+        "author": "Honor├⌐ de Balzac",
+        "title": "Le P├¿re Goriot",
+        "reviews": {}
+    },
+    "10": {
+        "author": "Samuel Beckett",
+        "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+        "reviews": {}
+    }
+}
+
+
+================================================================
+Task 3: Get books by ISBN
+COMMAND:
+curl -s http://localhost:5000/isbn/1
+
+OUTPUT:
+{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}
+
+
+================================================================
+Task 4: Get books by Author
+COMMAND:
+curl -s http://localhost:5000/author/Chinua%20Achebe
+
+OUTPUT:
+[{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}]
+
+
+================================================================
+Task 5: Get books by Title
+COMMAND:
+curl -s http://localhost:5000/title/Things%20Fall%20Apart
+
+OUTPUT:
+[{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}]
+
+
+================================================================
+Task 6: Get book review
+COMMAND:
+curl -s http://localhost:5000/review/1
+
+OUTPUT:
+{}
+
+
+================================================================
+Task 7: Register User
+COMMAND:
+curl -s -X POST -H "Content-Type: application/json" -d "{\"username\":\"answer_user\",\"password\":\"password123\"}" http://localhost:5000/register
+
+OUTPUT:
+{"message":"User successfully registered. Now you can login"}
+
+
+================================================================
+Task 8: Login User
+COMMAND:
+curl -s -c cookies.txt -X POST -H "Content-Type: application/json" -d "{\"username\":\"answer_user\",\"password\":\"password123\"}" http://localhost:5000/customer/login
+
+OUTPUT:
+User successfully logged in
+
+
+================================================================
+Task 9: Add Review
+COMMAND:
+curl -s -b cookies.txt -X PUT "http://localhost:5000/customer/auth/review/1?review=Great%20Book!"
+
+OUTPUT:
+{"message":"The review for the book with ISBN 1 has been added/updated."}
+
+
+================================================================
+Task 10: Delete Review
+COMMAND:
+curl -s -b cookies.txt -X DELETE "http://localhost:5000/customer/auth/review/1"
+
+OUTPUT:
+{"message":"Reviews for the ISBN 1 posted by the user answer_user deleted."}
+
+
+============
+Task 11: General.js URL
+OUTPUT:
+https://github.com/FahmiBahtiar/expressBookReviews/blob/main/final_project/router/general.js
