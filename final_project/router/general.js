@@ -89,6 +89,7 @@ module.exports.general = public_users;
 
 const axios = require('axios');
 
+// Task 10: Get all books using Async/Await
 const getBooks = async () => {
     try {
         const response = await axios.get('http://localhost:5000/');
@@ -98,6 +99,7 @@ const getBooks = async () => {
     }
 }
 
+// Task 11: Get book details by ISBN using Async/Await
 const getBookByISBN = async (isbn) => {
     try {
         const response = await axios.get('http://localhost:5000/isbn/' + isbn);
@@ -107,6 +109,7 @@ const getBookByISBN = async (isbn) => {
     }
 }
 
+// Task 12: Get book details by Author using Async/Await
 const getBookByAuthor = async (author) => {
     try {
         const response = await axios.get('http://localhost:5000/author/' + author);
@@ -116,6 +119,7 @@ const getBookByAuthor = async (author) => {
     }
 }
 
+// Task 13: Get book details by Title using Async/Await
 const getBookByTitle = async (title) => {
     try {
         const response = await axios.get('http://localhost:5000/title/' + title);
